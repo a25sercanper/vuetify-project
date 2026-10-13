@@ -1,5 +1,7 @@
+import.meta.env.VITE_API_KEY;
+
 export const searchMovies = async (searchString) => {
-    const url =`http://www.omdbapi.com/?s=${searchString}&apikey=${process.env.API_KEY}`;
+    const url =`http://www.omdbapi.com/?s=${searchString}&apikey=${import.meta.env.VITE_API_KEY}`;
 
     const response = await fetch(url);
 
@@ -9,7 +11,7 @@ export const searchMovies = async (searchString) => {
 }
 
 export  const getMovieDetails = async (id) => {
-    const url =`http://www.omdbapi.com/?i=${id}&apikey=${process.env.API_KEY}`;
+    const url =`http://www.omdbapi.com/?i=${id}&apikey=${import.meta.env.VITE_API_KEY}`;
 
     const response = await fetch(url);
 
